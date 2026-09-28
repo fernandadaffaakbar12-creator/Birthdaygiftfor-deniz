@@ -13,7 +13,9 @@
 
 <body>
     <audio id="bg-music" loop>
-        <source src="audio/Shape-of-My-Heart.mp3" type="audio/mpeg">
+        <source
+            src="audio/Westlife - When You Tell Me That You Love Me (Official Video) with Diana Ross ft. Diana Ross.mp3"
+            type="audio/mpeg">
     </audio>
 
     <div id="music-popup" class="music-popup">
@@ -21,9 +23,9 @@
         <img src="img/so.jpeg" alt="Album Cover" class="album-cover">
         <div class="music-info">
             <div class="marquee-wrapper">
-                <p class="song-title">Shape Of My Heart</p>
+                <p class="song-title">When You Tell Me That You Love Me</p>
             </div>
-            <p class="artist-name">Backstreet Boys</p>
+            <p class="artist-name">Westlife ft. Diana Ross</p>
         </div>
         <button id="play-pause-btn" class="play-pause-btn" onclick="toggleMusic()">
             <!-- SVG Pause Icon -->
@@ -50,15 +52,15 @@
     <!-- Loading Screen: Animasi "I love you" membentuk hati -->
     <div id="love-loading-screen">
         <div id="love-particles-container"></div>
-        <p id="loading-tap-text">klik disini</p>
+        <p id="loading-tap-text">Please tap here</p>
     </div>
 
     <!-- PIN Screen -->
     <div id="pin-screen" style="display: none;">
         <div class="pin-container glass-panel">
             <h2>Enter PIN</h2>
-            <p style="margin-bottom: 2px;">passwordnya tanggal + bulan jadian kita yaa</p>
-            <p style="margin-top: 0;">(Awas aja kalau lupa)</p>
+            <p style="margin-bottom: 2px;">The password is our anniversary date + month, okay?</p>
+            <p style="margin-top: 0;">(Don’t you dare forget!)</p>
             <input type="password" id="pin-input" maxlength="4" placeholder="****" inputmode="numeric" pattern="[0-9]*">
         </div>
     </div>
@@ -69,14 +71,55 @@
             <img id="pin-popup-img" src="img/cat-warning.png" alt="Warning Cat" class="pin-popup-img">
             <div class="pin-popup-emoji" id="pin-popup-emoji"></div>
             <p id="pin-popup-msg" class="pin-popup-msg"></p>
-            <button class="pin-popup-close" id="pin-popup-close">Iya iya 😤</button>
+            <button class="pin-popup-close" id="pin-popup-close">Sure! 😤</button>
+        </div>
+    </div>
+
+    <!-- Mini Game Screen -->
+    <div id="mini-game-screen" style="display: none;">
+        <div class="game-container">
+            <div class="game-header">
+                <h2 class="game-title">💐 Delivery Quest! 🐱</h2>
+                <p class="game-subtitle">Drag the bouquet of flowers past the obstacles to the cat!</p>
+                <div class="game-lives">
+                    <span id="game-lives-text">❤️ ❤️ ❤️</span>
+                </div>
+            </div>
+            <div class="game-canvas-wrapper">
+                <canvas id="game-canvas"></canvas>
+                <div id="game-overlay-start" class="game-overlay">
+                    <div class="game-overlay-content">
+                        <p class="game-overlay-emoji">💐</p>
+                        <h3>Deliver the Bouquet to the Cat!</h3>
+                        <p>Drag the bouquet of flowers along the path to the cat.<br>Avoid the monsters in the way!</p>
+                        <button id="game-start-btn" class="game-btn" onclick="startMiniGame()">Let's Start! 🎮</button>
+                    </div>
+                </div>
+                <div id="game-overlay-win" class="game-overlay" style="display:none;">
+                    <div class="game-overlay-content game-win">
+                        <p class="game-overlay-emoji">🎉</p>
+                        <h3>Success! Great Job!</h3>
+                        <p>The bouquet has reached the cat! 💕</p>
+                        <button class="game-btn" onclick="exitMiniGame()">Next 🎁</button>
+                    </div>
+                </div>
+                <div id="game-overlay-lose" class="game-overlay" style="display:none;">
+                    <div class="game-overlay-content game-lose">
+                        <p class="game-overlay-emoji">😿</p>
+                        <h3>Oh no, you hit a monster!</h3>
+                        <p>Let’s try again, babe~</p>
+                        <button class="game-btn" onclick="restartMiniGame()">Try Again 🔄</button>
+                        <button class="game-btn game-btn-skip" onclick="exitMiniGame()">Let’s just skip it.😅</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="landing-page" style="display: none;">
         <div class="bouquet-container" onclick="bukaKado()">
             <img src="img/BouquetBunga.png" alt="BouquetBunga" class="bouquet-img">
-            <p class="click-text">for u my luv<br>(pencet cukingnya) </p>
+            <p class="click-text">for u my love<br>(click the cat) </p>
         </div>
     </div>
 
@@ -86,29 +129,30 @@
             <h1 class="aesthetic-font fade-in-text">Happy Birthday,<br>My Everything</h1>
             <p class="aesthetic-font fade-in-text"
                 style="font-size: 1.3rem; color: #ffffff; margin-top: -5px; margin-bottom: 10px; letter-spacing: 2px;">-
-                Tsurayya Amanda -</p>
+                Deniz Kafka -</p>
             <img src="img/foto-pacar.png" alt="Foto Pacar" class="birthday-photo fade-in-text">
-            <p class="typing-text">Hari ini adalah hari yang paling spesial karena di hari ini, semesta membawa kamu ke
-                dunia.</p>
-            <p class="typing-text">Selamat bertambah usia. Terima kasih karena sudah lahir dan tumbuh menjadi pribadi
-                sebaik, sehangat, dan sekuat dirimu sekarang.</p>
+            <p class="typing-text">Today is the most special day because on this day, the universe brought you into the
+                world.</p>
+            <p class="typing-text">Happy getting older. Thank you for being born and growing into a person as good, warm
+                and strong as you are now.</p>
 
             <div class="pulsating-heart">🤍</div>
 
-            <p class="scroll-hint">✨Scroll pelan-pelan ke bawah ya sayang..✨</p>
+            <p class="scroll-hint">✨Slowly scroll down, My love.. 🤍✨</p>
         </section>
 
         <section class="slide glass-panel show-on-scroll">
             <h2 class="baby-pink-text" style="font-style: italic;">A little prayer for you.</h2>
-            <p class="fade-in-text">Semoga di usiamu yang baru ini, kamu selalu dikelilingi oleh kebahagiaan, kesehatan,
-                dan cinta yang tulus. Semoga setiap doa yang diam-diam kamu panjatkan menemukan jalannya untuk menjadi
-                kenyataan, setiap usaha yang kamu perjuangkan membuahkan hasil terbaik, dan setiap langkah yang kamu
-                ambil selalu membawa kamu semakin dekat dengan mimpi-mimpimu.</p>
-            <p class="fade-in-text">Aku juga berharap, apa pun yang akan kamu hadapi ke depannya, kamu tidak pernah
-                merasa sendirian. Semoga aku selalu diberi kesempatan untuk menemani setiap prosesmu—merayakan setiap
-                kebahagiaan, menguatkanmu di saat lelah, dan tetap berjalan di sisimu, bukan hanya di hari-hari yang
-                mudah, tetapi juga di hari-hari yang penuh tantangan. Karena melihatmu bahagia akan selalu menjadi salah
-                satu hal yang paling berarti bagiku.</p>
+            <p class="fade-in-text">Happy birthday my love🫶 I hope today brings you lots of happiness and joy, I can't
+                describe how much you mean to me. You are the best human being I have ever met until now. Thank you for
+                being there and accompanying me throughout this journey, thank you for not leaving me and believing in
+                me all this time. Honestly, I don't know what else to type, our path is really difficult🥹but one thing
+                I believe, we can go through it together and find extraordinary good things ahead.
+            </p>
+            <p class="fade-in-text">Once again, happy birthday good man🤍 May God always make your path easy, smooth all
+                your affairs, grant all your requests. Best wishes for you.
+                a million of my love for you, a million of my prayers for you. I hope my prayers can embrace you when my
+                hands can't</p>
         </section>
 
         <section class="slide photo-panel show-on-scroll">
@@ -124,31 +168,29 @@
             <div class="solar-system">
                 <div class="orbit-track">
 
-                    <div class="planet-card item1" data-caption="Sei Sapi">
+                    <div class="planet-card item1" data-caption="Kebab">
                         <img src="img/favorite-food.jpg" alt="Food">
                         <p class="planet-caption">Your favorite food</p>
                     </div>
 
-                    <div class="planet-card item2" data-caption="Ice Americano">
+                    <div class="planet-card item2" data-caption="Cay">
                         <img src="img/favorite-drink.jpg" alt="Drink">
                         <p class="planet-caption">Your favorite drink</p>
                     </div>
 
                     <div class="planet-card item3"
-                        data-embed="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator&si=b884de3e2c144942"
-                        data-caption="Perfect - Ed Sheeran">
+                        data-embed="https://open.spotify.com/embed/track/6cjIlxXM1ca6nxkJ0p27jU?utm_source=generator&si=02d011977bfe4c58"
+                        data-caption="Dilerim Ki - Dolu Kadehi Ters Tut">
                         <img src="img/favorite-song.jpg" alt="Song">
                         <p class="planet-caption">Your favorite song</p>
                     </div>
 
-                    <div class="planet-card item4"
-                        data-embed="https://www.youtube.com/embed/VBR6ZUZEhUI?si=u-zFwsDbj5SD9k_f"
-                        data-caption="Nadia Omara">
-                        <img src="img/favorite-yt.jpg" alt="YouTube Video">
-                        <p class="planet-caption">Your favorite Youtube Channel</p>
+                    <div class="planet-card item4" data-caption="Marvel">
+                        <img src="img/favorite-movie.jpg" alt="YouTube Video">
+                        <p class="planet-caption">Your favorite movie</p>
                     </div>
 
-                    <div class="planet-card item5" data-caption="Bayu Hendriawan">
+                    <div class="planet-card item5" data-caption="Mely Rindi Anita">
                         <img src="img/favorite-person.jpeg" alt="Person">
                         <p class="planet-caption">Your favorite person</p>
                     </div>
@@ -159,10 +201,10 @@
 
         <section class="slide photo-panel show-on-scroll">
             <h2 class="aesthetic-font" style="line-height: 0.8; margin-bottom: 35px; color: #ffb6c1;">
-                <span style="font-size: 2em; display: block;">Core Memories</span>
+                <span style="font-size: 2em; display: block;">Our Core Memories</span>
                 <span
-                    style="font-size: 1.2em; display: block; opacity: 0.9; transform: translateX(40px); color: #ffffff;">of
-                    Us</span>
+                    style="font-size: 1em; display: block; opacity: 0.9; transform: translateX(40px); color: #ffffff;">And
+                    Some Pict Of Your Handsome Face</span>
             </h2>
             <div class="gallery-scroll">
                 <div class="scratch-card">
@@ -190,7 +232,7 @@
                     <canvas class="scratch-canvas"></canvas>
                 </div>
             </div>
-            <p id="gallery-hint" class="gallery-hint">✨ Gosok semua fotonya dulu yaa! ✨</p>
+            <p id="gallery-hint" class="gallery-hint">✨ Swipe through all the pics first, okayyy! ✨</p>
             <div id="gallery-slider" class="gallery-slider">
                 <div class="gallery-slider-track">
                     <div id="gallery-slider-thumb" class="gallery-slider-thumb"></div>
@@ -210,11 +252,11 @@
                 </div>
                 <div class="polaroid">
                     <img src="img/so.jpeg" alt="Foto Pribadi 3">
-                    <p class="caption">So</p>
+                    <p class="caption">My</p>
                 </div>
                 <div class="polaroid">
                     <img src="img/beautiful.jpeg" alt="Foto Pribadi 4">
-                    <p class="caption">Beautiful</p>
+                    <p class="caption">King</p>
                 </div>
             </div>
         </section>
@@ -223,30 +265,35 @@
             <h1 class="aesthetic-font">You Are My Universe</h1>
 
             <p class="typing-text" style="margin-top: 25px; margin-bottom: 15px;">
-                Setiap detik bersamamu adalah kebahagiaan yang tidak akan pernah aku tukar dengan apa pun. Terima kasih
-                sudah bertahan, bertumbuh, dan selalu bersinar bersamaku sejauh ini.
+                Every moment we’ve shared means more to me than I could ever put into words, and I wouldn’t trade any of
+                it for anything. Even if distance puts a little space between us, I’m still so grateful for every
+                memory, every laugh, and every little moment we’ve had together. Thank you for staying, for growing with
+                me, and for continuing to shine even from miles away. No matter how far apart we are, I hope you always
+                know that you’re still someone I’ll always be grateful to have in my life.
             </p>
 
             <p class="typing-text" style="margin-bottom: 40px;">
-                Di hari spesialmu ini, aku hanya ingin kamu tahu bahwa kamu sangat amat berharga. Tetaplah menjadi
-                dirimu yang hangat dan luar biasa. Aku akan selalu ada di sini, mendukung dan mencintaimu dalam setiap
-                fase hidupmu. Selamat bertambah usia, satu-satunya duniaku. 🤍
+                On your special day, I just want you to know how incredibly precious you are to me. Please keep being
+                the warm, amazing person you’ve always been, and never forget how much you mean to me. No matter where
+                life takes you or what chapter you’re in, I’ll always be here cheering you on, supporting you, and
+                loving you through it all. Happy birthday, my whole world. 🤍
             </p>
 
             <hr style="border: 0; border-top: 1px solid rgba(255,182,193,0.3); margin-bottom: 20px;">
-            <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 5px;">Dari orang yang paling bersyukur memilikimu,
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 5px;">From someone forever grateful to love you,
             </p>
-            <p class="sender-name aesthetic-font baby-pink-text" style="font-size: 2rem; margin-top: 5px;">Bayu
-                Hendriawan</p>
+            <p class="sender-name aesthetic-font baby-pink-text" style="font-size: 2rem; margin-top: 5px;">Melly Rindy
+                Anita</p>
 
             <!-- Tombol Tiup Lilin -->
-            <button id="btn-tiup-lilin" class="btn-tiup-lilin" onclick="bukaHalamanLilin()">🎂 Tiup Lilin</button>
+            <button id="btn-tiup-lilin" class="btn-tiup-lilin" onclick="bukaHalamanLilin()">🎂 Blow out the
+                candle</button>
         </section>
 
         <!-- HALAMAN TIUP LILIN (Full Screen Overlay) -->
         <div id="candle-page" class="candle-page">
             <!-- Tombol Kembali -->
-            <button id="btn-back-candle" class="btn-back-candle" onclick="tutupHalamanLilin()">← Kembali</button>
+            <button id="btn-back-candle" class="btn-back-candle" onclick="tutupHalamanLilin()">← Back</button>
 
             <div class="candle-page-content">
                 <p id="candle-message" class="candle-message"></p>
@@ -260,7 +307,7 @@
                                 <div class="flame-inner"></div>
                             </div>
                             <div class="candle-number-body">
-                                <span class="candle-digit">2</span>
+                                <span class="candle-digit">3</span>
                             </div>
                         </div>
                         <!-- Angka 4 -->
@@ -269,7 +316,7 @@
                                 <div class="flame-inner"></div>
                             </div>
                             <div class="candle-number-body">
-                                <span class="candle-digit">0</span>
+                                <span class="candle-digit">4</span>
                             </div>
                         </div>
                     </div>
@@ -294,7 +341,7 @@
                     <div id="hold-progress-fill" class="hold-progress-fill"></div>
                 </div>
 
-                <button id="btn-mulai-tiup" class="btn-mulai-tiup" onclick="mulaiTiupLilin()">Mulai Tiup Lilin</button>
+                <button id="btn-mulai-tiup" class="btn-mulai-tiup" onclick="mulaiTiupLilin()">Start Blowing</button>
                 <p id="tap-hint" class="tap-hint"></p>
             </div>
         </div>
